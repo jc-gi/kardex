@@ -1,0 +1,121 @@
+{% include 'header.html' %}
+
+<div>
+    
+ 
+    <h1 class="h2">Dashboard</h1>
+    <p>Welcome back, {{ username }}!</p>
+    
+</div>
+<div>    
+        <a class="py-2 d-none d-md-inline-block" href="{{ url_for('logout') }}">
+        <i class="fas fa-sign-out-alt"></i> Logout</a></p>
+</div>
+<br/>
+{% for student in student %}
+{% for addres in addres %}
+{% for email in email %}
+{% for phone in phone %}
+
+    <form method="post" action="/update" enctype="multipart/form-data">
+
+        <div class="card-header">
+            Student Information
+        </div>
+
+        <div class="card-body">
+            <h4 class="card-title">Student capture</h4>
+            <p class="card-text"> 
+
+
+        ID Student:
+        <input type="text" value="{{student[0]}}" name="txtStudent_id" id="txtStudent_id">
+        <br>
+
+        Name: 
+        <input type="text" value="{{student[3]}}" name="txtFirst_name" id="txtFirst_name">
+        <br>
+
+        Middle Name:
+        <input type="text" value="{{student[2]}}" name="txtMiddle_name" id="txtMiddle_name">
+        <br>
+
+        Last Name:
+        <input type="text" value="{{student[1]}}" name="txtLast_name" id="txtLast_name">
+        <br>
+
+        Gender:
+        <select value="{{student[4]}}" name="txtGender" id="txtGender">
+            <option value="M">M</option>
+            <option value="F">F</option>
+        </select>
+        <br>
+        <!--
+        Update Date:
+        <input type="date" value="{{student[6]}}" name="txtUpdated_on" id="dateUpdated_on">
+        <br>
+        -->
+
+        
+        Address line:
+        <input type="text" value="{{addres[2]}}" name="txtAddress_line" id="txtAddress_line">
+        <br>
+
+        City:
+        <input type="text" value="{{addres[3]}}" name="txtCity" id="txtCity">
+        <br>
+        
+        Zip:
+        <input type="text" value="{{addres[4]}}" name="txtZip" id="txtZip">
+        <br>
+
+        State:
+        <input type="text" value="{{addres[5]}}" name="txtState" id="txtState">
+        <br>
+
+        Email:
+        <input type="text" value="{{email[0]}}" name="txtEmail" id="txtEmail">
+        <br>
+
+        Email type:
+        <select value="{{email[2]}}" name="txtEmail_type" id="txtEmail_type">
+            <option value="private">private</option>
+            <option value="public">public</option>
+        </select>
+        <br>
+
+        Phone:
+        <input type="text" value="{{phone[2]}}" name="txtPhone" id="txtPhone">
+        <br>
+
+        Phone type:
+        <select value="{{phone[3]}}" name="txtPhone_type" id="txtPhone_type">
+            <option value="private">private</option>
+            <option value="public">public</option>
+        </select>
+        <br>
+
+        Country code:
+        <input type="text" value="{{phone[4]}}" name="txtCountry_code" id="txtCountry_code">
+        <br>
+
+
+        Area code:
+        <input type="text" value="{{phone[5]}}" name="txtArea_code" id="txtArea_code">
+        <br>
+
+        <br>
+        <input type="submit" value="Update"> 
+    </p>
+    </div>
+    <div class="card-footer text-muted">
+        github @jc-gi
+    </div>
+</div>
+
+    </form>
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% include 'footer.html' %}

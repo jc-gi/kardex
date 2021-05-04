@@ -1,0 +1,221 @@
+{% include 'header.html' %}
+<div>
+    <h1 class="h2">Dashboard</h1>
+    <p><p>
+    </div>
+    <div><a class="py-2 d-none d-md-inline-block" href="{{ url_for('logout') }}">
+        <i class="fas fa-sign-out-alt"></i> Logout</a></p>
+    </div>
+<br/>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+
+<form method="post" action="/store" enctype="multipart/form-data">
+<div class="card">
+    <div class="card-header">
+        Student Information
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Student capture</h4>
+        <p class="card-text">     
+                <!-- 
+               <div class="form-group">
+                 <label for="txtStudent_id">ID Student:</label>
+                 <input type="text" name="txtStudent_id" id="txtStudent_id" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+                -->
+
+                <div class="form-group">
+                 <label for="txtFirst_name">Name: </label>
+                 <input type="text" name="txtFirst_name" id="txtFirst_name" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+               <br/>
+
+               <div class="form-group">
+                 <label for="txtMiddle_name">Middle Name: </label>
+                 <input type="text" name="txtMiddle_name" id="txtMiddle_name" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+               <br>
+
+               <div class="form-group">
+                 <label for="txtLast_name"> Last Name: </label>
+                 <input type="text" name="txtLast_name" id="txtLast_name" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+
+                <div class="form-group">
+                 <label for="txtLast_name"> Gender: </label>
+                 <select name="txtGender" id="txtGender" class="form-control" placeholder="" aria-describedby="helpId">
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                </select>
+                 <small id="helpId" class="text-muted">Help: M->Male, F->Female</small>
+               </div>
+                <br>
+
+                 <!-- 
+
+                <div class="form-group">
+                 <label for="txtLast_name"> Created Date: </label>
+                 <input type="date" name="txtCreated_on" id="dateCreated_on" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+                
+                -->
+
+                 <!-- 
+
+                <div class="form-group">
+                 <label for="txtLast_name"> Update Date: </label>
+                 <input type="date" name="txtUpdated_on" id="dateUpdated_on" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+                -->
+
+               
+                <!-- 
+                 <div class="form-group">
+                 <label for="txtAddress_id">Address id:</label>
+                 <input type="text" name="txtAddress_id" id="txtAddress_id" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+                 Required meta tags -->
+
+
+
+                 <div class="form-group">
+                 <label for="txtAddress_line">Address Line:</label>
+                 <input type="text" name="txtAddress_line" id="txtAddress_line" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+
+
+
+                 <div class="form-group">
+                 <label for="City">City:</label>
+                 <input type="text" name="txtCity" id="txtCity" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+
+
+
+                 <div class="form-group">
+                 <label for="txtZip">Zip:</label>
+                 <input type="text" name="txtZip" id="txtZip" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+
+
+
+                 <div class="form-group">
+                 <label for="txtState">State:</label>
+                 <input type="text" name="txtState" id="txtState" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+
+
+
+                 <div class="form-group">
+                 <label for="txtEmail">Email:</label>
+                 <input type="text" name="txtEmail" id="txtEmail" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+          
+   
+                <div class="form-group">
+                 <label for="txtEmail_type"> Email type: </label>
+                 <select name="txtEmail_type" id="txtEmail_type" class="form-control" placeholder="" aria-describedby="helpId">
+                    <option value="private">private</option>
+                    <option value="public">public</option>
+                </select>
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+
+                 <div class="form-group">
+                 <label for="txtPhone">Phone:</label>
+                 <input type="text" name="txtPhone" id="txtPhone" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+
+                <div class="form-group">
+                 <label for="txtPhone_type"> Phone Type: </label>
+                 <select name="txtPhone_type" id="txtPhone_type" class="form-control" placeholder="" aria-describedby="helpId">
+                    <option value="private">private</option>
+                    <option value="public">public</option>
+                </select>
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+
+                <div class="form-group">
+                 <label for="txtCountry_code">Country Code:</label>
+                 <input type="text" name="txtCountry_code" id="txtCountry_code" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>
+
+                <div class="form-group">
+                 <label for="txtArea_code">Area_code:</label>
+                 <input type="text" name="txtArea_code" id="txtArea_code" class="form-control" placeholder="" aria-describedby="helpId">
+                 <small id="helpId" class="text-muted">Help text</small>
+               </div>
+                <br>             
+
+                
+
+                <div class="form-group">
+                  <label for="">Select Option</label>
+                  <input type="submit" value="Add" class="btn btn-success"  aria-describedby="helpId" placeholder="">
+                  <a href="{{ url_for('index')}}" class="btn btn-primary">Back</a>
+                  <small id="helpId" class="form-text text-muted">Help</small>
+                </div>
+                <br>
+              
+        
+        </p>
+    </div>
+    <div class="card-footer text-muted">
+        github @jc-gi
+    </div>
+</div>
+
+
+
+</form>
+
+
+{% include 'footer.html' %}
+<!-- 
+  `student_id` int(11) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `middle_name` varchar(45) DEFAULT NULL,
+  `first_name` varchar(45) DEFAULT NULL,
+  `gender` enum('masculino','femenino') NOT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `updated_on` datetime DEFAULT NULL
+-->

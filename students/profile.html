@@ -1,0 +1,86 @@
+//profile.html
+{% include 'header.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h1>Profile Page</h1>
+<div>
+    <p>Account details are below:</p>
+    <table>
+        <tr>
+            <td>ID Student:</td>
+            <td>{{ student['student_id'] }}</td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td>{{ student['first_name'] }}</td>
+        </tr>
+        <tr>
+            <td>Middle name:</td>
+            <td>{{ student['middle_name'] }}</td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td>{{ student['last_name'] }}</td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>{{ student['gender'] }}</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>{{ addres['address_line'] }}</td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td>{{ addres['city'] }}</td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td>{{ addres['states'] }}</td>
+        </tr>
+        <tr>
+            <td>Post Code:</td>
+            <td>{{ addres['zip'] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ email['email'] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ email['email_type'] }}</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>{{ phone['phone'] }}</td>
+        </tr>
+        <tr>
+            <td>Phone Type:</td>
+            <td>{{ phone['phone_type'] }}</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>{{ phone['country_code'] }}</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>{{ phone['area_code'] }}</td>
+        </tr>
+       
+    </table>
+    
+    <tr>
+                      
+        <td></td>
+        
+        <td>
+            <a class="btn btn-warning" href="/edit/{{student['student_id']}}">Edit</a>
+            <a onclick = "return confirm('Are you sure?')" class="btn btn-danger" href="/destroy/{{student[0]}}">Delete</a>
+        </td>
+    </tr>
+
+
+</div>
+{% endblock %}
